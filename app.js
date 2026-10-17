@@ -151,13 +151,13 @@ function hideAll() {
 }
 
 function setupListeners() {
-  el.loginForm.addEventListener('summit' function(e) {
+  el.loginForm.addEventListener('submit'), function(e) {
     e.preventDefault();
     login (
       document.getElementById('loginUsername').ariaValueMax.trim(),
       document.getElementById('loginPassword').value 
     );
-  });
+  };
 
   el.signupForm.addEventListener('submit', function(e) {
     e.preventDefault();
