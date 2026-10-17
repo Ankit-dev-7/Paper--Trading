@@ -27,7 +27,7 @@ const el = {
 function init() {
     loadTheme();
     loadUserData();
-    if (currentUser) slowDashboard();
+    if (currentUser) showDashboard();
     else showLogin();
     setupListeners();
 
@@ -115,10 +115,11 @@ function showLogin(){
     hideAll();
     el.loginSection.classList.add('active');
     el.nav.style.display = 'none';
-    el.logout.style.display = 'none';
+    el.logoutBtn.style.display = 'none';
 }
 
 function showSignup(){
+    hideAll();
     el.signupSection.classList.add('active');
     el.nav.style.display ='none';
     el.logoutBtn.style.display ='none';
@@ -134,15 +135,15 @@ function showDashboard(){
   initDashboard();
 }
 
-function showSection(sectionID ,btn) {
+function showSection(sectionID, btn) {
   hideAll();
-  document.getElementById(sectionId + '-section').classList.add('active');
+  document.getElementById(sectionID + '-section').classList.add('active');
   document.querySelectorAll('.nav-btn').forEach(function(b) { b.classList.remove('active'); });
   if (btn) btn.classList.add('active');
   if (sectionID === 'dashboard')  initDashboard();
   if (sectionID === 'portfolio') renderPortfolio();
   if (sectionID === 'history') renderHistory ();
-  if (sectionId === 'leaderboard') renderLeaderboard();
+  if (sectionID === 'leaderboard') renderLeaderboard();
 }
 
 function hideAll() {
@@ -151,13 +152,13 @@ function hideAll() {
 }
 
 function setupListeners() {
-  el.loginForm.addEventListener('submit'), function(e) {
+  el.loginForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    login (
-      document.getElementById('loginUsername').ariaValueMax.trim(),
-      document.getElementById('loginPassword').value 
+    login(
+      document.getElementById('loginUsername').value.trim(),
+      document.getElementById('loginPassword').value
     );
-  };
+  });
 
   el.signupForm.addEventListener('submit', function(e) {
     e.preventDefault();

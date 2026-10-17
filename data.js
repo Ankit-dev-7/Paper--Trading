@@ -30,8 +30,8 @@ return {
 stocks.forEach(function(stock) {
     var price = stock.price;
     for (var i=0;i<30;i++){
-        var candle = makeCandel(price ,i);
-        stock.candles.push(candel);
+        var candle = makeCandle(price, i);
+        stock.candles.push(candle);
         stock.history.push(candle.c);
         price= candle.c;
     }
@@ -46,7 +46,7 @@ var leaderboardUsers = [
 ];
 
 function updateStockPrices() {
-    stock.ForEach(function(stock){
+    stocks.forEach(function(stock){
         var lastCandle = stock.candles[stock.candles.length - 1];
     var newCandle  = makeCandle(lastCandle.c, stock.candles.length);
     stock.candles.push(newCandle);

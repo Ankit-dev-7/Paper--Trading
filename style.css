@@ -105,7 +105,7 @@ header::before {
 .balance-label{
     display: block;
     font-size: .82rem;
-    color: var(--mmuted);
+    color: var(--muted);
     margin-bottom: .4rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -196,7 +196,7 @@ main { display: block;}
   pointer-events: none;
 }
 
-.section.actve { display: block}
+.section.active { display: block; }
 
 .form-group { margin-bottom: 1.25rem; display: flex; flex-direction: column; }
 
