@@ -12,3 +12,5 @@ Run the application using a local server.
 Open the website in your browser.
 just click on this link for demo: https://ankit-dev-7.github.io/Paper--Trading/
 
+
+I use copilot to fix the errors in the project 
